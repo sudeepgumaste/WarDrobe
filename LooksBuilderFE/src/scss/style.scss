@@ -1,0 +1,12 @@
+// Setup files
+@import "./base/page-config";
+@import "./base/viewport-mixin";
+@import "./base/variables";
+
+//utils
+@import "./utils/loading-logo";
+@import "./utils/btn";
+@import "./utils/navbar";
+@import "./utils/container";
+
+@import "./pages/LooksBuilder/LooksBuilder"

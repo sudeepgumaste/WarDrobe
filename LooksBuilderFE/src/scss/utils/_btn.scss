@@ -1,0 +1,25 @@
+.btn{
+  border: none;
+  height: 2.3rem;
+  margin: 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  
+  &.btn--primary{
+    color: $white;
+    background-color: $blue;
+    box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: 0.3);
+    &:disabled{
+      background: lighten($color: $blue, $amount: 50%);
+    }
+  }
+
+  &.btn--block{
+    display: block;
+    width: calc(100% - 1.5rem);
+    margin: 0.5rem 1.5rem;
+  }
+}

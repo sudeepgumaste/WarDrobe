@@ -1,0 +1,218 @@
+.builder__catalogue {
+  $root: &;
+  width: 26rem;
+  background: $background-primary;
+  display: flex;
+
+  &__category-selector {
+    display: flex;
+    flex-direction: column;
+    background-color: $background-secondary;
+
+
+    .btn--wear {
+      width: 3rem;
+      height: 4rem;
+      margin: 0;
+      border-radius: none;
+      border: none;
+      padding: 0.4rem;
+
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      &.btn--selected {
+        background-color: $blue;
+        svg{
+          path{
+            fill: white;
+          }
+        }
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    #{$root}__images-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      overflow-y: auto;
+      width: 100%;
+
+      .btn-add-image{
+        display: none;
+      }
+
+      .builder__catelogue__image {
+        position: relative;
+        border-radius: 1rem;
+        box-shadow: 10px 10px 10px rgba($color: black, $alpha: 0.1), -5px -5px 20px rgba($color: black, $alpha: 0.1);
+        margin: 1rem;
+        cursor: pointer;
+        overflow: hidden;
+        // width: 18rem;
+        min-height: 23rem;
+        height: 23rem;
+
+        &::after {
+          top: 0;
+          left: 0;
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 5;
+          pointer-events: none;
+        }
+
+        .catelogue__image {
+          // width: 18rem;
+          position: relative;
+          z-index: 5;
+          height: 100%;
+        }
+
+        .catelogue__image:hover+.remove-sym,
+        .remove-sym:hover {
+          // border: 10px solid red;
+          opacity: 1;
+        }
+
+        .remove-sym {
+          width: 2.5rem;
+          height: 2.5rem;
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          z-index: 7;
+          opacity: 0;
+        }
+
+
+        &.selected::after {
+          background: rgba($color: $blue, $alpha: 0.4);
+        }
+      }
+    }
+
+  }
+}
+
+
+@include mediaMd {
+  .builder__catalogue {
+    height: 30vh;
+    $root: &;
+    flex-direction: column;
+    // flex:1;
+    width: 100%;
+
+    &__category-selector {
+      height: 2.5rem;
+      flex-direction: row;
+      justify-content: stretch;
+      align-content: stretch;
+
+      .btn--wear {
+        height: 2.5rem;
+        flex: 1;
+
+        img {
+          width: unset;
+          height: 100%;
+        }
+      }
+    }
+
+    &__container {
+      // flex-direction: row;
+      height: calc(100% - 2.5rem);
+
+      .btn--primary {
+        display: none;
+      }
+
+      
+      #{$root}__images-wrapper {
+        
+        flex-direction: row;
+        overflow-x: auto;
+        
+        .btn-add-image{
+          display: unset;
+          width: 16rem;
+          min-width: 16rem;
+          height: 93%;
+          margin: 0 0.8rem ;
+          border: 2px rgba(black, 0.2) dashed ;
+          border-radius: 1rem;
+          color: $blue;
+          background: none;
+        }
+
+        .builder__catelogue__image {
+          position: relative;
+          min-height: 93%;
+          height: 93%;
+          min-width: 16rem;
+          width: 16rem;
+          margin: 0 0.8rem;
+
+
+          .catelogue__image {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mediaSm {
+  .builder__catalogue {
+    $root: &;
+
+    &__container {
+      #{$root}__images-wrapper {
+        .btn-add-image{
+          width: 11rem;
+          min-width: 11rem;
+        }
+        .builder__catelogue__image {
+          min-width: 11rem;
+          width: 11rem;
+        }
+      }
+    }
+  }
+}
+
+@include mediaXs {
+  .builder__catalogue {
+    $root: &;
+
+    &__container {
+      #{$root}__images-wrapper {
+        .btn-add-image{
+          width: 9rem;
+          min-width: 9rem;
+        }
+        .builder__catelogue__image {
+          min-width: 9rem;
+          width: 9rem;
+        }
+      }
+    }
+  }
+}

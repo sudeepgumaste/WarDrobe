@@ -1,0 +1,9 @@
+.container{
+  width: 100%;
+  height: calc(100vh - #{$nav-height});
+  position: absolute;
+  top: $nav-height;
+  overflow-y: auto;
+  overflow-x: hidden;
+  left: 0rem;
+}

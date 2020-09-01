@@ -1,0 +1,25 @@
+.navbar{
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: $nav-height;
+  display: flex;
+  padding: 0 7rem;
+  background-color: $blue;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 0 20px 20px rgba($color: black, $alpha: 0.2);
+
+  &__brand{
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+}
+
+@include mediaSm{
+  .navbar{
+    padding: 0;
+    justify-content: center;
+  }
+}
